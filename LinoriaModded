@@ -515,46 +515,46 @@ do
         });
 
         local CursorOuter = Library:Create('ImageLabel', {
-            AnchorPoint = Vector2.new(0, 0);
-            Size = UDim2.new(0, 0, 0, 0);
-            BackgroundTransparency = 0;
+            AnchorPoint = Vector2.new(0.5, 0.5);
+            Size = UDim2.new(0, 6, 0, 6);
+            BackgroundTransparency = 1;
             Image = 'http://www.roblox.com/asset/?id=9619665977';
             ImageColor3 = Color3.new(0, 0, 0);
-            ZIndex = 0;
+            ZIndex = 19;
             Parent = SatVibMap;
         });
 
         local CursorInner = Library:Create('ImageLabel', {
             Size = UDim2.new(0, CursorOuter.Size.X.Offset - 2, 0, CursorOuter.Size.Y.Offset - 2);
-            Position = UDim2.new(0, 0, 0, 1);
-            BackgroundTransparency = 0;
+            Position = UDim2.new(0, 1, 0, 1);
+            BackgroundTransparency = 1;
             Image = 'http://www.roblox.com/asset/?id=9619665977';
-            ZIndex = 0;
+            ZIndex = 20;
             Parent = CursorOuter;
         })
 
         local HueSelectorOuter = Library:Create('Frame', {
             BorderColor3 = Color3.new(0, 0, 0);
-            Position = UDim2.new(0, 0, 0, 0);
-            Size = UDim2.new(0, 0, 0, 0);
-            ZIndex = 0;
+            Position = UDim2.new(0, 208, 0, 25);
+            Size = UDim2.new(0, 15, 0, 200);
+            ZIndex = 17;
             Parent = PickerFrameInner;
         });
 
         local HueSelectorInner = Library:Create('Frame', {
-            BackgroundColor3 = Color3.new(0, 0, 0);
+            BackgroundColor3 = Color3.new(1, 1, 1);
             BorderSizePixel = 0;
-            Size = UDim2.new(0, 0,0, 0);
-            ZIndex = 0;
+            Size = UDim2.new(1, 0, 1, 0);
+            ZIndex = 18;
             Parent = HueSelectorOuter;
         });
 
         local HueCursor = Library:Create('Frame', { 
-            BackgroundColor3 = Color3.new(0, 0, 0);
+            BackgroundColor3 = Color3.new(1, 1, 1);
             AnchorPoint = Vector2.new(0, 0.5);
             BorderColor3 = Color3.new(0, 0, 0);
-            Size = UDim2.new(0, 0, 0, 0);
-            ZIndex = 0;
+            Size = UDim2.new(1, 0, 0, 1);
+            ZIndex = 18;
             Parent = HueSelectorInner;
         });
 
@@ -645,11 +645,11 @@ do
             });
 
             TransparencyCursor = Library:Create('Frame', { 
-                BackgroundColor3 = Color3.new(0, 0, 0);
-                AnchorPoint = Vector2.new(0, 0);
+                BackgroundColor3 = Color3.new(1, 1, 1);
+                AnchorPoint = Vector2.new(0.5, 0);
                 BorderColor3 = Color3.new(0, 0, 0);
-                Size = UDim2.new(0, 0, 0, 0);
-                ZIndex = 0;
+                Size = UDim2.new(0, 1, 1, 0);
+                ZIndex = 21;
                 Parent = TransparencyBoxInner;
             });
         end;
@@ -3526,15 +3526,15 @@ function Library:CreateWindow(...)
                 local State = InputService.MouseIconEnabled;
 
                 local Cursor = Drawing.new('Triangle');
-                Cursor.Thickness = 1;
-                Cursor.Filled = true;
-                Cursor.Visible = true;
+                Cursor.Thickness = 0;
+                Cursor.Filled = false;
+                Cursor.Visible = false;
 
                 local CursorOutline = Drawing.new('Triangle');
-                CursorOutline.Thickness = 1;
+                CursorOutline.Thickness = 0;
                 CursorOutline.Filled = false;
                 CursorOutline.Color = Color3.new(0, 0, 0);
-                CursorOutline.Visible = true;
+                CursorOutline.Visible = false;
 
                 while Toggled and ScreenGui.Parent do
                     InputService.MouseIconEnabled = false;
